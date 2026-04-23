@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>OJN Sinaloa - Merch</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body
+  class="min-h-screen p-4 text-[#363334] bg-cover bg-center bg-fixed"
+  style="background-image: url('fondo.png');">
+
+<div class="max-w-4xl mx-auto">
+  <div class="text-center mb-10">
+
+    <h1 class="text-6xl font-black text-[#8C0D11]">
+      OJN Sinaloa
+    </h1>
+
+    <p class="text-2xl mt-2 font-semibold">
+      Stand Merch
+    </p>
+
+    <p class="text-[#8C0D11] mt-1">
+      Evento Kodomo 2026
+    </p>
+
+  </div>
+  <div class="bg-white rounded-[2rem] shadow-2xl p-6 border border-[#8C0D11]/10">
+
+    <div class="space-y-6">
+      <div class="bg-[#FFF4F4] p-5 rounded-3xl border border-[#8C0D11]/10">
+
+        <h2 class="text-3xl font-black mb-4">
+          Tablitas - $40
+        </h2>
+
+        <div class="grid grid-cols-3 gap-3">
+
+          <button
+            onclick="addSale('Tablitas',40)"
+            class="bg-[#8C0D11] text-white p-5 rounded-2xl text-2xl font-bold">
+
+            +
+
+          </button>
+
+          <button
+            onclick="removeSale('Tablitas',40)"
+            class="bg-[#363334] text-white p-5 rounded-2xl text-2xl font-bold">
+
+            -
+
+          </button>
+
+          <button
+            onclick="addPending('Tablitas',40)"
+            class="bg-[#C11111] text-white p-5 rounded-2xl text-lg font-bold">
+
+            Pendiente
+
+          </button>
+
+        </div>
+
+      </div>
+      <div class="bg-[#FFF4F4] p-5 rounded-3xl border border-[#8C0D11]/10">
+
+        <h2 class="text-3xl font-black mb-4">
+          Sticker - $5
+        </h2>
+
+        <div class="grid grid-cols-3 gap-3">
+
+          <button
+            onclick="addSale('Sticker',5)"
+            class="bg-[#8C0D11] text-white p-5 rounded-2xl text-2xl font-bold">
+
+            +
+
+          </button>
+
+          <button
+            onclick="removeSale('Sticker',5)"
+            class="bg-[#363334] text-white p-5 rounded-2xl text-2xl font-bold">
+
+            -
+
+          </button>
+
+          <button
+            onclick="addPending('Sticker',5)"
+            class="bg-[#C11111] text-white p-5 rounded-2xl text-lg font-bold">
+
+            Pendiente
+
+          </button>
+
+        </div>
+
+      </div>
+      <div class="bg-[#FFF4F4] p-5 rounded-3xl border border-[#8C0D11]/10">
+
+        <h2 class="text-3xl font-black mb-4">
+          Poster - $20
+        </h2>
+
+        <div class="grid grid-cols-3 gap-3">
+
+          <button
+            onclick="addSale('Poster',20)"
+            class="bg-[#8C0D11] text-white p-5 rounded-2xl text-2xl font-bold">
+
+            +
+
+          </button>
+
+          <button
+            onclick="removeSale('Poster',20)"
+            class="bg-[#363334] text-white p-5 rounded-2xl text-2xl font-bold">
+
+            -
+
+          </button>
+
+          <button
+            onclick="addPending('Poster',20)"
+            class="bg-[#C11111] text-white p-5 rounded-2xl text-lg font-bold">
+
+            Pendiente
+
+          </button>
+
+        </div>
+
+      </div>
+      <div class="bg-[#FFF4F4] p-5 rounded-3xl border border-[#8C0D11]/10">
+
+        <h2 class="text-3xl font-black mb-4">
+          Origami - $5
+        </h2>
+
+        <div class="grid grid-cols-3 gap-3">
+
+          <button
+            onclick="addSale('Origami',5)"
+            class="bg-[#8C0D11] text-white p-5 rounded-2xl text-2xl font-bold">
+
+            +
+
+          </button>
+
+          <button
+            onclick="removeSale('Origami',5)"
+            class="bg-[#363334] text-white p-5 rounded-2xl text-2xl font-bold">
+
+            -
+
+          </button>
+
+          <button
+            onclick="addPending('Origami',5)"
+            class="bg-[#C11111] text-white p-5 rounded-2xl text-lg font-bold">
+
+            Pendiente
+
+          </button>
+
+        </div>
+
+      </div>
+      <div class="bg-[#FFF4F4] p-5 rounded-3xl border border-[#8C0D11]/10">
+
+        <h2 class="text-3xl font-black mb-4">
+          Dibujo - $5
+        </h2>
+
+        <div class="grid grid-cols-3 gap-3">
+
+          <button
+            onclick="addSale('Dibujo',5)"
+            class="bg-[#8C0D11] text-white p-5 rounded-2xl text-2xl font-bold">
+
+            +
+
+          </button>
+
+          <button
+            onclick="removeSale('Dibujo',5)"
+            class="bg-[#363334] text-white p-5 rounded-2xl text-2xl font-bold">
+
+            -
+
+          </button>
+
+          <button
+            onclick="addPending('Dibujo',5)"
+            class="bg-[#C11111] text-white p-5 rounded-2xl text-lg font-bold">
+
+            Pendiente
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+    <hr class="my-8">
+
+    <div class="space-y-3 text-2xl">
+
+      <div class="flex justify-between">
+        <span>Tablitas</span>
+        <span id="tablitas">0</span>
+      </div>
+
+      <div class="flex justify-between">
+        <span>Sticker</span>
+        <span id="sticker">0</span>
+      </div>
+
+      <div class="flex justify-between">
+        <span>Poster</span>
+        <span id="poster">0</span>
+      </div>
+
+      <div class="flex justify-between">
+        <span>Origami</span>
+        <span id="origami">0</span>
+      </div>
+
+      <div class="flex justify-between">
+        <span>Dibujo</span>
+        <span id="dibujo">0</span>
+      </div>
+
+    </div>
+    <div class="bg-[#363334] text-white rounded-3xl p-6 mt-8">
+
+      <div class="flex justify-between items-center">
+
+        <span class="text-3xl font-bold">
+          Total
+        </span>
+
+        <span class="text-5xl font-black">
+          $<span id="total">0</span>
+        </span>
+
+      </div>
+
+    </div>
+    <div class="mt-10">
+
+      <h2 class="text-4xl font-black text-[#8C0D11] mb-5">
+        Pendientes
+      </h2>
+
+      <div id="pendingList" class="space-y-4">
+
+      </div>
+
+    </div>
+    <button
+      onclick="resetSales()"
+      class="mt-10 w-full bg-[#8C0D11] hover:opacity-90 text-white py-5 rounded-3xl text-2xl font-black">
+
+      Reiniciar Sistema
+
+    </button>
+
+  </div>
+
+</div>
+
+<script>
+const RESET_PASSWORD = "1178";
+const REMOVE_PASSWORD = "1914";
+let total = 0;
+
+const counts = {
+
+  Tablitas: 0,
+  Sticker: 0,
+  Poster: 0,
+  Origami: 0,
+  Dibujo: 0
+
+};
+
+let pendingSales = [];
+
+function addSale(product, price){
+
+  counts[product]++;
+
+  total += price;
+
+  updateUI();
+
+  saveData();
+}
+
+function removeSale(product, price){
+
+  const password = prompt(
+    "Contraseña para restar:"
+  );
+
+  if(password !== REMOVE_PASSWORD){
+
+    alert("Contraseña incorrecta");
+
+    return;
+  }
+
+  if(counts[product] <= 0) return;
+
+  counts[product]--;
+
+  total -= price;
+
+  updateUI();
+
+  saveData();
+}
+
+function addPending(product, price){
+
+  const client = prompt(
+    "Nombre del cliente:"
+  );
+
+  if(!client) return;
+
+  const quantity = parseInt(
+
+    prompt("Cantidad:")
+
+  );
+
+  if(!quantity || quantity <= 0) return;
+
+  pendingSales.push({
+
+    product,
+    price,
+    client,
+    quantity
+
+  });
+
+  renderPending();
+
+  saveData();
+}
+
+function removePending(index){
+
+  const pending =
+    pendingSales[index];
+
+  if(!counts[pending.product]){
+
+    counts[pending.product] = 0;
+
+  }
+
+  counts[pending.product] +=
+    Number(pending.quantity);
+
+  total +=
+    Number(pending.price) *
+    Number(pending.quantity);
+
+  pendingSales.splice(index, 1);
+
+  updateUI();
+
+  renderPending();
+
+  saveData();
+}
+
+function updateUI(){
+
+  document.getElementById('tablitas').innerText =
+    counts.Tablitas;
+
+  document.getElementById('sticker').innerText =
+    counts.Sticker;
+
+  document.getElementById('poster').innerText =
+    counts.Poster;
+
+  document.getElementById('origami').innerText =
+    counts.Origami;
+
+  document.getElementById('dibujo').innerText =
+    counts.Dibujo;
+
+  document.getElementById('total').innerText =
+    total;
+}
+
+function renderPending(){
+
+  const container =
+    document.getElementById('pendingList');
+
+  container.innerHTML = '';
+
+  pendingSales.forEach((item, index) => {
+
+    container.innerHTML += `
+
+      <div class="bg-[#FFF4F4] border-l-8 border-[#C11111] p-5 rounded-3xl flex justify-between items-center">
+
+        <div>
+
+          <div class="font-black text-2xl">
+
+            ${item.product}
+
+          </div>
+
+          <div class="mt-1">
+
+            Cliente:
+            <strong>${item.client}</strong>
+
+          </div>
+
+          <div>
+
+            Cantidad:
+            ${item.quantity}
+
+          </div>
+
+          <div class="font-bold text-[#8C0D11]">
+
+            Debe:
+            $${item.price * item.quantity}
+
+          </div>
+
+        </div>
+
+        <button
+
+          onclick="removePending(${index})"
+
+          class="bg-[#363334] text-white px-6 py-3 rounded-2xl font-bold">
+
+          Pagó
+
+        </button>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+function saveData(){
+
+  localStorage.setItem(
+
+    'merchPOS',
+
+    JSON.stringify({
+
+      counts,
+      total,
+      pendingSales
+
+    })
+
+  );
+}
+
+function loadData(){
+
+  const data = JSON.parse(
+
+    localStorage.getItem(
+      'merchPOS'
+    )
+
+  );
+
+  if(!data) return;
+
+  Object.assign(
+    counts,
+    data.counts
+  );
+
+  total =
+    data.total || 0;
+
+  pendingSales =
+    data.pendingSales || [];
+
+  updateUI();
+
+  renderPending();
+}
+
+function resetSales(){
+
+  const password = prompt(
+    "Contraseña para reiniciar:"
+  );
+
+  if(password !== RESET_PASSWORD){
+
+    alert("Contraseña incorrecta");
+
+    return;
+  }
+
+  localStorage.removeItem(
+    'merchPOS'
+  );
+
+  location.reload();
+}
+loadData();
+
+</script>
+
+</body>
+</html>
+```

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Kodomo</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-6">
+
+  <div class="max-w-5xl mx-auto">
+
+    <h1 class="text-5xl font-bold text-center mb-8">
+      Dashboard Kodomo 2026
+    </h1>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- RASPADOS -->
+
+      <div class="bg-white rounded-3xl shadow-xl p-6">
+
+        <h2 class="text-3xl font-bold mb-4">
+          Raspados
+        </h2>
+
+        <div class="space-y-2 text-xl">
+
+          <div class="flex justify-between">
+            <span>Ciruela</span>
+            <span id="ciruela">0</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Durazno</span>
+            <span id="durazno">0</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Vainilla</span>
+            <span id="vainilla">0</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Diablito</span>
+            <span id="diablito">0</span>
+          </div>
+
+        </div>
+
+        <hr class="my-4">
+
+        <div class="text-3xl font-bold">
+          Total: $<span id="raspadosTotal">0</span>
+        </div>
+
+      </div>
+
+      <!-- MERCH -->
+
+      <div class="bg-white rounded-3xl shadow-xl p-6">
+
+        <h2 class="text-3xl font-bold mb-4">
+          Merch
+        </h2>
+
+        <div class="space-y-2 text-xl">
+
+          <div class="flex justify-between">
+            <span>Tablitas</span>
+            <span id="tablitas">0</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Sticker</span>
+            <span id="sticker">0</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Poster</span>
+            <span id="poster">0</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Origami</span>
+            <span id="origami">0</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Dibujo</span>
+            <span id="dibujo">0</span>
+          </div>
+
+        </div>
+
+        <hr class="my-4">
+
+        <div class="text-3xl font-bold">
+          Total: $<span id="merchTotal">0</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TOTAL GENERAL -->
+
+    <div class="bg-black text-white rounded-3xl shadow-xl p-8 mt-8 text-center">
+
+      <h2 class="text-4xl font-bold mb-4">
+        TOTAL GENERAL
+      </h2>
+
+      <div class="text-6xl font-bold">
+        $<span id="grandTotal">0</span>
+      </div>
+
+    </div>
+
+  </div>
+
+<script>
+
+function loadDashboard(){
+
+  const raspados = JSON.parse(localStorage.getItem('raspadosPOS'));
+  const merch = JSON.parse(localStorage.getItem('merchPOS'));
+
+  let raspadosTotal = 0;
+  let merchTotal = 0;
+
+  if(raspados){
+
+    document.getElementById('ciruela').innerText =
+      raspados.counts.Ciruela || 0;
+
+    document.getElementById('durazno').innerText =
+      raspados.counts.Durazno || 0;
+
+    document.getElementById('vainilla').innerText =
+      raspados.counts.Vainilla || 0;
+
+    document.getElementById('diablito').innerText =
+      raspados.counts.Diablito || 0;
+
+    raspadosTotal = raspados.total || 0;
+
+    document.getElementById('raspadosTotal').innerText =
+      raspadosTotal;
+  }
+
+  if(merch){
+
+    document.getElementById('tablitas').innerText =
+      merch.counts.Tablitas || 0;
+
+    document.getElementById('sticker').innerText =
+      merch.counts.Sticker || 0;
+
+    document.getElementById('poster').innerText =
+      merch.counts.Poster || 0;
+
+    document.getElementById('origami').innerText =
+      merch.counts.Origami || 0;
+
+    document.getElementById('dibujo').innerText =
+      merch.counts.Dibujo || 0;
+
+    merchTotal = merch.total || 0;
+
+    document.getElementById('merchTotal').innerText =
+      merchTotal;
+  }
+
+  document.getElementById('grandTotal').innerText =
+    raspadosTotal + merchTotal;
+}
+
+loadDashboard();
+
+setInterval(loadDashboard, 1000);
+
+</script>
+
+</body>
+</html>
