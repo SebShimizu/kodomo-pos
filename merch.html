@@ -2,48 +2,68 @@
 <html lang="es">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <title>OJN Sinaloa - Merch</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
 <body
-  class="min-h-screen p-4 text-[#363334] bg-cover bg-center bg-fixed"
+  class="min-h-screen text-[#363334] bg-cover bg-center bg-fixed overflow-x-hidden"
   style="background-image: url('fondo.png');">
 
-<div class="max-w-4xl mx-auto">
-  <div class="text-center mb-10">
+<div class="max-w-md md:max-w-5xl mx-auto px-3 md:px-6 pb-40">
 
-    <h1 class="text-6xl font-black text-[#8C0D11]">
-      OJN Sinaloa
-    </h1>
+  <!-- HEADER -->
 
-    <p class="text-2xl mt-2 font-semibold">
-      Stand Merch
-    </p>
+  <div class="sticky top-0 z-50 py-4 mb-6 backdrop-blur-md bg-[#FFFEEB]/85 rounded-b-3xl">
 
-    <p class="text-[#8C0D11] mt-1">
-      Evento Kodomo 2026
-    </p>
+    <div class="text-center">
+
+      <h1 class="text-4xl md:text-6xl font-black text-[#8C0D11]">
+        OJN Sinaloa
+      </h1>
+
+      <p class="text-lg md:text-2xl font-bold">
+        Stand Merch
+      </p>
+
+      <p class="text-sm md:text-lg text-[#8C0D11]">
+        Evento Kodomo 2026
+      </p>
+
+    </div>
 
   </div>
-  <div class="bg-white rounded-[2rem] shadow-2xl p-6 border border-[#8C0D11]/10">
 
-    <div class="space-y-6">
+  <!-- CARD PRINCIPAL -->
+
+  <div class="bg-white/95 backdrop-blur-md rounded-[2rem] shadow-2xl p-4 md:p-8 border border-[#8C0D11]/10">
+
+    <!-- PRODUCTOS -->
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- TABLITAS -->
+
       <div class="bg-[#FFF4F4] p-5 rounded-3xl border border-[#8C0D11]/10">
 
-        <h2 class="text-3xl font-black mb-4">
+        <h2 class="text-2xl md:text-3xl font-black mb-4">
           Tablitas - $40
         </h2>
 
-        <div class="grid grid-cols-3 gap-3">
+        <div class="grid grid-cols-3 gap-2">
 
           <button
             onclick="addSale('Tablitas',40)"
-            class="bg-[#8C0D11] text-white p-5 rounded-2xl text-2xl font-bold">
+            class="bg-[#8C0D11] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
 
             +
 
@@ -51,7 +71,7 @@
 
           <button
             onclick="removeSale('Tablitas',40)"
-            class="bg-[#363334] text-white p-5 rounded-2xl text-2xl font-bold">
+            class="bg-[#363334] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
 
             -
 
@@ -59,7 +79,7 @@
 
           <button
             onclick="addPending('Tablitas',40)"
-            class="bg-[#C11111] text-white p-5 rounded-2xl text-lg font-bold">
+            class="bg-[#C11111] hover:opacity-90 text-white py-6 rounded-2xl text-sm md:text-lg font-bold">
 
             Pendiente
 
@@ -68,17 +88,20 @@
         </div>
 
       </div>
+
+      <!-- STICKER -->
+
       <div class="bg-[#FFF4F4] p-5 rounded-3xl border border-[#8C0D11]/10">
 
-        <h2 class="text-3xl font-black mb-4">
+        <h2 class="text-2xl md:text-3xl font-black mb-4">
           Sticker - $5
         </h2>
 
-        <div class="grid grid-cols-3 gap-3">
+        <div class="grid grid-cols-3 gap-2">
 
           <button
             onclick="addSale('Sticker',5)"
-            class="bg-[#8C0D11] text-white p-5 rounded-2xl text-2xl font-bold">
+            class="bg-[#8C0D11] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
 
             +
 
@@ -86,7 +109,7 @@
 
           <button
             onclick="removeSale('Sticker',5)"
-            class="bg-[#363334] text-white p-5 rounded-2xl text-2xl font-bold">
+            class="bg-[#363334] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
 
             -
 
@@ -94,7 +117,7 @@
 
           <button
             onclick="addPending('Sticker',5)"
-            class="bg-[#C11111] text-white p-5 rounded-2xl text-lg font-bold">
+            class="bg-[#C11111] hover:opacity-90 text-white py-6 rounded-2xl text-sm md:text-lg font-bold">
 
             Pendiente
 
@@ -103,17 +126,20 @@
         </div>
 
       </div>
+
+      <!-- POSTER -->
+
       <div class="bg-[#FFF4F4] p-5 rounded-3xl border border-[#8C0D11]/10">
 
-        <h2 class="text-3xl font-black mb-4">
+        <h2 class="text-2xl md:text-3xl font-black mb-4">
           Poster - $20
         </h2>
 
-        <div class="grid grid-cols-3 gap-3">
+        <div class="grid grid-cols-3 gap-2">
 
           <button
             onclick="addSale('Poster',20)"
-            class="bg-[#8C0D11] text-white p-5 rounded-2xl text-2xl font-bold">
+            class="bg-[#8C0D11] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
 
             +
 
@@ -121,7 +147,7 @@
 
           <button
             onclick="removeSale('Poster',20)"
-            class="bg-[#363334] text-white p-5 rounded-2xl text-2xl font-bold">
+            class="bg-[#363334] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
 
             -
 
@@ -129,7 +155,7 @@
 
           <button
             onclick="addPending('Poster',20)"
-            class="bg-[#C11111] text-white p-5 rounded-2xl text-lg font-bold">
+            class="bg-[#C11111] hover:opacity-90 text-white py-6 rounded-2xl text-sm md:text-lg font-bold">
 
             Pendiente
 
@@ -138,17 +164,20 @@
         </div>
 
       </div>
+
+      <!-- ORIGAMI -->
+
       <div class="bg-[#FFF4F4] p-5 rounded-3xl border border-[#8C0D11]/10">
 
-        <h2 class="text-3xl font-black mb-4">
+        <h2 class="text-2xl md:text-3xl font-black mb-4">
           Origami - $5
         </h2>
 
-        <div class="grid grid-cols-3 gap-3">
+        <div class="grid grid-cols-3 gap-2">
 
           <button
             onclick="addSale('Origami',5)"
-            class="bg-[#8C0D11] text-white p-5 rounded-2xl text-2xl font-bold">
+            class="bg-[#8C0D11] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
 
             +
 
@@ -156,7 +185,7 @@
 
           <button
             onclick="removeSale('Origami',5)"
-            class="bg-[#363334] text-white p-5 rounded-2xl text-2xl font-bold">
+            class="bg-[#363334] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
 
             -
 
@@ -164,7 +193,7 @@
 
           <button
             onclick="addPending('Origami',5)"
-            class="bg-[#C11111] text-white p-5 rounded-2xl text-lg font-bold">
+            class="bg-[#C11111] hover:opacity-90 text-white py-6 rounded-2xl text-sm md:text-lg font-bold">
 
             Pendiente
 
@@ -173,17 +202,20 @@
         </div>
 
       </div>
+
+      <!-- DIBUJO -->
+
       <div class="bg-[#FFF4F4] p-5 rounded-3xl border border-[#8C0D11]/10">
 
-        <h2 class="text-3xl font-black mb-4">
+        <h2 class="text-2xl md:text-3xl font-black mb-4">
           Dibujo - $5
         </h2>
 
-        <div class="grid grid-cols-3 gap-3">
+        <div class="grid grid-cols-3 gap-2">
 
           <button
             onclick="addSale('Dibujo',5)"
-            class="bg-[#8C0D11] text-white p-5 rounded-2xl text-2xl font-bold">
+            class="bg-[#8C0D11] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
 
             +
 
@@ -191,7 +223,7 @@
 
           <button
             onclick="removeSale('Dibujo',5)"
-            class="bg-[#363334] text-white p-5 rounded-2xl text-2xl font-bold">
+            class="bg-[#363334] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
 
             -
 
@@ -199,7 +231,7 @@
 
           <button
             onclick="addPending('Dibujo',5)"
-            class="bg-[#C11111] text-white p-5 rounded-2xl text-lg font-bold">
+            class="bg-[#C11111] hover:opacity-90 text-white py-6 rounded-2xl text-sm md:text-lg font-bold">
 
             Pendiente
 
@@ -210,9 +242,12 @@
       </div>
 
     </div>
+
+    <!-- RESUMEN -->
+
     <hr class="my-8">
 
-    <div class="space-y-3 text-2xl">
+    <div class="space-y-3 text-lg md:text-2xl">
 
       <div class="flex justify-between">
         <span>Tablitas</span>
@@ -240,24 +275,12 @@
       </div>
 
     </div>
-    <div class="bg-[#363334] text-white rounded-3xl p-6 mt-8">
 
-      <div class="flex justify-between items-center">
+    <!-- PENDIENTES -->
 
-        <span class="text-3xl font-bold">
-          Total
-        </span>
-
-        <span class="text-5xl font-black">
-          $<span id="total">0</span>
-        </span>
-
-      </div>
-
-    </div>
     <div class="mt-10">
 
-      <h2 class="text-4xl font-black text-[#8C0D11] mb-5">
+      <h2 class="text-3xl md:text-4xl font-black text-[#8C0D11] mb-5">
         Pendientes
       </h2>
 
@@ -266,9 +289,12 @@
       </div>
 
     </div>
+
+    <!-- RESET -->
+
     <button
       onclick="resetSales()"
-      class="mt-10 w-full bg-[#8C0D11] hover:opacity-90 text-white py-5 rounded-3xl text-2xl font-black">
+      class="mt-10 w-full bg-[#8C0D11] hover:opacity-90 text-white py-5 rounded-3xl text-xl md:text-2xl font-black">
 
       Reiniciar Sistema
 
@@ -278,9 +304,33 @@
 
 </div>
 
+<!-- TOTAL FIJO -->
+
+<div class="fixed bottom-0 left-0 right-0 z-50 p-3">
+
+  <div class="max-w-md md:max-w-5xl mx-auto bg-[#363334] text-white rounded-3xl p-5 shadow-2xl">
+
+    <div class="flex justify-between items-center">
+
+      <span class="text-2xl md:text-3xl font-bold">
+        Total
+      </span>
+
+      <span class="text-4xl md:text-5xl font-black">
+        $<span id="total">0</span>
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
+
 <script>
+
 const RESET_PASSWORD = "1178";
 const REMOVE_PASSWORD = "1914";
+
 let total = 0;
 
 const counts = {
@@ -419,11 +469,11 @@ function renderPending(){
 
     container.innerHTML += `
 
-      <div class="bg-[#FFF4F4] border-l-8 border-[#C11111] p-5 rounded-3xl flex justify-between items-center">
+      <div class="bg-[#FFF4F4] border-l-8 border-[#C11111] p-5 rounded-3xl flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
 
         <div>
 
-          <div class="font-black text-2xl">
+          <div class="font-black text-xl md:text-2xl">
 
             ${item.product}
 
@@ -456,7 +506,7 @@ function renderPending(){
 
           onclick="removePending(${index})"
 
-          class="bg-[#363334] text-white px-6 py-3 rounded-2xl font-bold">
+          class="bg-[#363334] text-white w-full md:w-auto py-4 px-6 rounded-2xl text-lg font-bold">
 
           Pagó
 
@@ -534,6 +584,7 @@ function resetSales(){
 
   location.reload();
 }
+
 loadData();
 
 </script>
