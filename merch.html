@@ -1,334 +1,71 @@
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-  <title>OJN Sinaloa - Merch</title>
+<title>Login</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 
 </head>
 
-<body
-  class="min-h-screen text-[#363334] bg-cover bg-center bg-fixed overflow-x-hidden"
-  style="background-image: url('fondo.jpeg');">
+<body class="bg-[#FFFFEB] min-h-screen flex items-center justify-center">
 
-<div class="max-w-md md:max-w-5xl mx-auto px-3 md:px-6 pb-40">
+<div class="bg-white p-10 rounded-3xl shadow-2xl w-[400px]">
 
-  <!-- HEADER -->
+<h1 class="text-4xl font-black text-center text-[#6C1411] mb-8">
 
-  <div class="sticky top-0 z-50 py-4 mb-6 backdrop-blur-md bg-[#FFFEEB]/85 rounded-b-3xl">
+OJN Sinaloa
 
-    <div class="text-center">
+</h1>
 
-      <h1 class="text-4xl md:text-6xl font-black text-[#8C0D11]">
-        OJN Sinaloa
-      </h1>
+<input
 
-      <p class="text-lg md:text-2xl font-bold">
-        Stand Merch
-      </p>
+id="usuario"
 
-      <p class="text-sm md:text-lg text-[#8C0D11]">
-        Sistema de gestión de ventas
-      </p>
+type="text"
 
-    </div>
+placeholder="Usuario"
 
-  </div>
+class="w-full border p-4 rounded-2xl mb-4">
 
-  <!-- CARD PRINCIPAL -->
+<input
 
-  <div class="bg-white/95 backdrop-blur-md rounded-[2rem] shadow-2xl p-4 md:p-8 border border-[#8C0D11]/10">
+id="password"
 
-    <!-- PRODUCTOS -->
+type="password"
 
-    <div class="grid md:grid-cols-2 gap-6">
+placeholder="Contraseña"
 
-      <!-- TABLITAS -->
+class="w-full border p-4 rounded-2xl mb-4">
 
-      <div class="bg-[#FFF4F4] p-5 rounded-3xl border border-[#8C0D11]/10">
+<button
 
-        <h2 class="text-2xl md:text-3xl font-black mb-4">
-          Tablitas - $40
-        </h2>
+id="btnLogin"
 
-        <div class="grid grid-cols-3 gap-2">
+class="w-full bg-[#C11111] text-white p-4 rounded-2xl font-black">
 
-          <button
-            onclick="addSale('Tablitas',40)"
-            class="bg-[#8C0D11] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
+Ingresar
 
-            +
+</button>
 
-          </button>
+<p
+id="error"
 
-          <button
-            onclick="removeSale('Tablitas',40)"
-            class="bg-[#363334] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
+class="hidden mt-4 text-red-600 text-center font-bold">
 
-            -
-
-          </button>
-
-          <button
-            onclick="addPending('Tablitas',40)"
-            class="bg-[#C11111] hover:opacity-90 text-white py-6 rounded-2xl text-sm md:text-lg font-bold">
-
-            Pendiente
-
-          </button>
-
-        </div>
-
-      </div>
-
-      <!-- STICKER -->
-
-      <div class="bg-[#FFF4F4] p-5 rounded-3xl border border-[#8C0D11]/10">
-
-        <h2 class="text-2xl md:text-3xl font-black mb-4">
-          Sticker - $5
-        </h2>
-
-        <div class="grid grid-cols-3 gap-2">
-
-          <button
-            onclick="addSale('Sticker',5)"
-            class="bg-[#8C0D11] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
-
-            +
-
-          </button>
-
-          <button
-            onclick="removeSale('Sticker',5)"
-            class="bg-[#363334] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
-
-            -
-
-          </button>
-
-          <button
-            onclick="addPending('Sticker',5)"
-            class="bg-[#C11111] hover:opacity-90 text-white py-6 rounded-2xl text-sm md:text-lg font-bold">
-
-            Pendiente
-
-          </button>
-
-        </div>
-
-      </div>
-
-      <!-- POSTER -->
-
-      <div class="bg-[#FFF4F4] p-5 rounded-3xl border border-[#8C0D11]/10">
-
-        <h2 class="text-2xl md:text-3xl font-black mb-4">
-          Poster - $20
-        </h2>
-
-        <div class="grid grid-cols-3 gap-2">
-
-          <button
-            onclick="addSale('Poster',20)"
-            class="bg-[#8C0D11] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
-
-            +
-
-          </button>
-
-          <button
-            onclick="removeSale('Poster',20)"
-            class="bg-[#363334] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
-
-            -
-
-          </button>
-
-          <button
-            onclick="addPending('Poster',20)"
-            class="bg-[#C11111] hover:opacity-90 text-white py-6 rounded-2xl text-sm md:text-lg font-bold">
-
-            Pendiente
-
-          </button>
-
-        </div>
-
-      </div>
-
-      <!-- ORIGAMI -->
-
-      <div class="bg-[#FFF4F4] p-5 rounded-3xl border border-[#8C0D11]/10">
-
-        <h2 class="text-2xl md:text-3xl font-black mb-4">
-          Origami - $5
-        </h2>
-
-        <div class="grid grid-cols-3 gap-2">
-
-          <button
-            onclick="addSale('Origami',5)"
-            class="bg-[#8C0D11] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
-
-            +
-
-          </button>
-
-          <button
-            onclick="removeSale('Origami',5)"
-            class="bg-[#363334] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
-
-            -
-
-          </button>
-
-          <button
-            onclick="addPending('Origami',5)"
-            class="bg-[#C11111] hover:opacity-90 text-white py-6 rounded-2xl text-sm md:text-lg font-bold">
-
-            Pendiente
-
-          </button>
-
-        </div>
-
-      </div>
-
-      <!-- DIBUJO -->
-
-      <div class="bg-[#FFF4F4] p-5 rounded-3xl border border-[#8C0D11]/10">
-
-        <h2 class="text-2xl md:text-3xl font-black mb-4">
-          Dibujo - $5
-        </h2>
-
-        <div class="grid grid-cols-3 gap-2">
-
-          <button
-            onclick="addSale('Dibujo',5)"
-            class="bg-[#8C0D11] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
-
-            +
-
-          </button>
-
-          <button
-            onclick="removeSale('Dibujo',5)"
-            class="bg-[#363334] hover:opacity-90 text-white py-6 rounded-2xl text-xl md:text-2xl font-bold">
-
-            -
-
-          </button>
-
-          <button
-            onclick="addPending('Dibujo',5)"
-            class="bg-[#C11111] hover:opacity-90 text-white py-6 rounded-2xl text-sm md:text-lg font-bold">
-
-            Pendiente
-
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- RESUMEN -->
-
-    <hr class="my-8">
-
-    <div class="space-y-3 text-lg md:text-2xl">
-
-      <div class="flex justify-between">
-        <span>Tablitas</span>
-        <span id="tablitas">0</span>
-      </div>
-
-      <div class="flex justify-between">
-        <span>Sticker</span>
-        <span id="sticker">0</span>
-      </div>
-
-      <div class="flex justify-between">
-        <span>Poster</span>
-        <span id="poster">0</span>
-      </div>
-
-      <div class="flex justify-between">
-        <span>Origami</span>
-        <span id="origami">0</span>
-      </div>
-
-      <div class="flex justify-between">
-        <span>Dibujo</span>
-        <span id="dibujo">0</span>
-      </div>
-
-    </div>
-
-    <!-- PENDIENTES -->
-
-    <div class="mt-10">
-
-      <h2 class="text-3xl md:text-4xl font-black text-[#8C0D11] mb-5">
-        Pendientes
-      </h2>
-
-      <div id="pendingList" class="space-y-4">
-
-      </div>
-
-    </div>
-
-    <!-- RESET -->
-
-    <button
-      onclick="resetSales()"
-      class="mt-10 w-full bg-[#8C0D11] hover:opacity-90 text-white py-5 rounded-3xl text-xl md:text-2xl font-black">
-
-      Reiniciar Sistema
-
-    </button>
-
-  </div>
-
-</div>
-
-<!-- TOTAL FIJO -->
-
-<div class="fixed bottom-0 left-0 right-0 z-50 p-3">
-
-  <div class="max-w-md md:max-w-5xl mx-auto bg-[#363334] text-white rounded-3xl p-5 shadow-2xl">
-
-    <div class="flex justify-between items-center">
-
-      <span class="text-2xl md:text-3xl font-bold">
-        Total
-      </span>
-
-      <span class="text-4xl md:text-5xl font-black">
-        $<span id="total">0</span>
-      </span>
-
-    </div>
-
-  </div>
+</p>
 
 </div>
 
 <script>
+
 const supabaseUrl =
 'https://ktvneighjktwjffjefbh.supabase.co';
 
@@ -337,318 +74,99 @@ const supabaseKey =
 
 const supabaseClient =
 supabase.createClient(
-  supabaseUrl,
-  supabaseKey
+supabaseUrl,
+supabaseKey
 );
 
-const usuario = JSON.parse(
+document
+.getElementById('btnLogin')
 
-  localStorage.getItem(
-    "usuarioActual"
-  )
+.addEventListener(
+'click',
+login
+);
+
+async function login(){
+
+const usuario =
+document
+.getElementById(
+'usuario'
+)
+
+.value
+.trim();
+
+const password =
+document
+.getElementById(
+'password'
+)
+
+.value
+.trim();
+
+const { data, error } =
+await supabaseClient
+
+.from('usuarios')
+
+.select('*')
+
+.eq('usuario', usuario)
+
+.eq('password', password);
+
+console.log(data);
+console.log(error);
+
+if(error){
+
+mostrarError(
+'Error conexión'
+);
+
+return;
+
+}
+
+if(data.length === 0){
+
+mostrarError(
+'Credenciales incorrectas'
+);
+
+return;
+
+}
+
+localStorage.setItem(
+
+'usuarioActual',
+
+JSON.stringify(data[0])
 
 );
 
-if(!usuario){
-
-  window.location.href =
-  "index.html";
+window.location.href =
+'menu.html';
 
 }
 
-const RESET_PASSWORD = "1178";
-const REMOVE_PASSWORD = "1914";
-const PAGADO_PASSWORD = "1824";
-const CANCELAR_PASSWORD = "1814";
+function mostrarError(msg){
 
-let total = 0;
+const error =
+document.getElementById(
+'error'
+);
 
-const counts = {
+error.innerText = msg;
 
-  Tablitas: 0,
-  Sticker: 0,
-  Poster: 0,
-  Origami: 0,
-  Dibujo: 0
-
-};
-
-let pendingSales = [];
-
-async function addSale(product, price){
-
-  counts[product]++;
-
-  total += price;
-
-  updateUI();
-
-  saveData();
-
-  const { error } = await supabaseClient
-
-  .from("ventas")
-
-  .insert([{
-
-    usuario: usuario.usuario,
-
-    stand: "merch",
-
-    producto: product,
-
-    cantidad: 1,
-
-    precio: price,
-
-    total: price,
-
-    tipo: "venta"
-
-  }]);
-
-  if(error){
-
-    console.log(error);
-
-    alert(
-      "Error guardando venta"
-    );
-
-  }
+error.classList.remove(
+'hidden'
+);
 
 }
-
-function removeSale(product, price){
-
-  const password = prompt(
-    "Contraseña para restar:"
-  );
-
-  if(password !== REMOVE_PASSWORD){
-
-    alert("Contraseña incorrecta");
-
-    return;
-  }
-
-  if(counts[product] <= 0) return;
-
-  counts[product]--;
-
-  total -= price;
-
-  updateUI();
-
-  saveData();
-}
-
-function addPending(product, price){
-
-  const client = prompt(
-    "Nombre del cliente:"
-  );
-
-  if(!client) return;
-
-  const quantity = parseInt(
-
-    prompt("Cantidad:")
-
-  );
-
-  if(!quantity || quantity <= 0) return;
-
-  pendingSales.push({
-
-    product,
-    price,
-    client,
-    quantity
-
-  });
-
-  renderPending();
-
-  saveData();
-}
-
-function removePending(index){
-
-  const pending =
-    pendingSales[index];
-
-  if(!counts[pending.product]){
-
-    counts[pending.product] = 0;
-
-  }
-
-  counts[pending.product] +=
-    Number(pending.quantity);
-
-  total +=
-    Number(pending.price) *
-    Number(pending.quantity);
-
-  pendingSales.splice(index, 1);
-
-  updateUI();
-
-  renderPending();
-
-  saveData();
-}
-
-function updateUI(){
-
-  document.getElementById('tablitas').innerText =
-    counts.Tablitas;
-
-  document.getElementById('sticker').innerText =
-    counts.Sticker;
-
-  document.getElementById('poster').innerText =
-    counts.Poster;
-
-  document.getElementById('origami').innerText =
-    counts.Origami;
-
-  document.getElementById('dibujo').innerText =
-    counts.Dibujo;
-
-  document.getElementById('total').innerText =
-    total;
-}
-
-function renderPending(){
-
-  const container =
-    document.getElementById('pendingList');
-
-  container.innerHTML = '';
-
-  pendingSales.forEach((item, index) => {
-
-    container.innerHTML += `
-
-      <div class="bg-[#FFF4F4] border-l-8 border-[#C11111] p-5 rounded-3xl flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
-
-        <div>
-
-          <div class="font-black text-xl md:text-2xl">
-
-            ${item.product}
-
-          </div>
-
-          <div class="mt-1">
-
-            Cliente:
-            <strong>${item.client}</strong>
-
-          </div>
-
-          <div>
-
-            Cantidad:
-            ${item.quantity}
-
-          </div>
-
-          <div class="font-bold text-[#8C0D11]">
-
-            Debe:
-            $${item.price * item.quantity}
-
-          </div>
-
-        </div>
-
-        <button
-
-          onclick="removePending(${index})"
-
-          class="bg-[#363334] text-white w-full md:w-auto py-4 px-6 rounded-2xl text-lg font-bold">
-
-          Pagó
-
-        </button>
-
-      </div>
-
-    `;
-
-  });
-
-}
-
-function saveData(){
-
-  localStorage.setItem(
-
-    'merchPOS',
-
-    JSON.stringify({
-
-      counts,
-      total,
-      pendingSales
-
-    })
-
-  );
-}
-
-function loadData(){
-
-  const data = JSON.parse(
-
-    localStorage.getItem(
-      'merchPOS'
-    )
-
-  );
-
-  if(!data) return;
-
-  Object.assign(
-    counts,
-    data.counts
-  );
-
-  total =
-    data.total || 0;
-
-  pendingSales =
-    data.pendingSales || [];
-
-  updateUI();
-
-  renderPending();
-}
-
-function resetSales(){
-
-  const password = prompt(
-    "Contraseña para reiniciar:"
-  );
-
-  if(password !== RESET_PASSWORD){
-
-    alert("Contraseña incorrecta");
-
-    return;
-  }
-
-  localStorage.removeItem(
-    'merchPOS'
-  );
-
-  location.reload();
-}
-
-loadData();
 
 </script>
 
