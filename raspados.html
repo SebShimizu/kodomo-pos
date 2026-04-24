@@ -17,7 +17,7 @@
 
 <body
   class="min-h-screen text-[#363334] bg-cover bg-center bg-fixed overflow-x-hidden"
-  style="background-image: url('fondo.png');">
+  style="background-image: url('fondo.jpeg');">
 
 <div class="max-w-md md:max-w-5xl mx-auto px-3 md:px-6 pb-40">
 
@@ -36,7 +36,7 @@
       </p>
 
       <p class="text-sm md:text-lg text-[#8C0D11]">
-        Evento Kodomo 2026
+        Sistema de gestión de ventas
       </p>
 
     </div>
@@ -287,6 +287,7 @@
 
 const RESET_PASSWORD = "1178";
 const REMOVE_PASSWORD = "1914";
+const PAGO_PASSWORD = "1824";
 
 let total = 0;
 
@@ -368,6 +369,17 @@ function addPending(product, price){
 
 function removePending(index){
 
+  const password = prompt(
+    "Contraseña para confirmar pago:"
+  );
+
+  if(password !== PENDING_PASSWORD){
+
+    alert("Contraseña incorrecta");
+
+    return;
+  }
+
   const pending =
     pendingSales[index];
 
@@ -387,6 +399,25 @@ function removePending(index){
   pendingSales.splice(index, 1);
 
   updateUI();
+
+  renderPending();
+
+  saveData();
+}
+function cancelPending(index){
+
+  const password = prompt(
+    "Contraseña para cancelar pendiente:"
+  );
+
+  if(password !== REMOVE_PASSWORD){
+
+    alert("Contraseña incorrecta");
+
+    return;
+  }
+
+  pendingSales.splice(index, 1);
 
   renderPending();
 
@@ -454,16 +485,29 @@ function renderPending(){
           </div>
 
         </div>
+<div class="flex gap-2 w-full md:w-auto">
 
-        <button
+  <button
 
-          onclick="removePending(${index})"
+    onclick="removePending(${index})"
 
-          class="bg-[#363334] text-white w-full md:w-auto py-4 px-6 rounded-2xl text-lg font-bold">
+    class="bg-[#363334] text-white flex-1 py-4 px-6 rounded-2xl text-lg font-bold">
 
-          Pagó
+    Pagado
 
-        </button>
+  </button>
+
+  <button
+
+    onclick="cancelPending(${index})"
+
+    class="bg-[#8C0D11] text-white flex-1 py-4 px-6 rounded-2xl text-lg font-bold">
+
+    Cancelar
+
+  </button>
+
+</div>
 
       </div>
 
@@ -544,4 +588,3 @@ loadData();
 
 </body>
 </html>
-```
