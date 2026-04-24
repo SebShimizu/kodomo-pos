@@ -331,6 +331,7 @@
 const RESET_PASSWORD = "1178";
 const REMOVE_PASSWORD = "1914";
 const PAGO_PASSWORD = "1824";
+const CANCELAR_PASSWORD = "1814";
 
 let total = 0;
 
@@ -386,7 +387,7 @@ function cancelPending(index){
     "Contraseña para cancelar pendiente:"
   );
 
-  if(password !== REMOVE_PASSWORD){
+  if(password !== CANCELAR_PASSWORD){
 
     alert("Contraseña incorrecta");
 
@@ -431,6 +432,17 @@ function addPending(product, price){
 }
 
 function removePending(index){
+
+  const password = prompt(
+    "Contraseña para confirmar pago:"
+  );
+
+  if(password !== PAGADO_PASSWORD){
+
+    alert("Contraseña incorrecta");
+
+    return;
+  }
 
   const pending =
     pendingSales[index];
