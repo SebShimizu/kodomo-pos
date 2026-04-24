@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,6 +13,7 @@
   <title>OJN Sinaloa - Merch</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 
 </head>
 
@@ -327,6 +329,32 @@
 </div>
 
 <script>
+const supabaseUrl =
+'https://ktvneighjktwjffjefbh.supabase.co';
+
+const supabaseKey =
+'sb_publishable_aOvjgc-i2PXwvO9ISBg0TA_dizK34ZQ';
+
+const supabaseClient =
+supabase.createClient(
+  supabaseUrl,
+  supabaseKey
+);
+
+const usuario = JSON.parse(
+
+  localStorage.getItem(
+    "usuarioActual"
+  )
+
+);
+
+if(!usuario){
+
+  window.location.href =
+  "index.html";
+
+}
 
 const RESET_PASSWORD = "1178";
 const REMOVE_PASSWORD = "1914";
@@ -347,7 +375,7 @@ const counts = {
 
 let pendingSales = [];
 
-function addSale(product, price){
+async function addSale(product, price){
 
   counts[product]++;
 
@@ -356,6 +384,39 @@ function addSale(product, price){
   updateUI();
 
   saveData();
+
+  const { error } = await supabaseClient
+
+  .from("ventas")
+
+  .insert([{
+
+    usuario: usuario.usuario,
+
+    stand: "merch",
+
+    producto: product,
+
+    cantidad: 1,
+
+    precio: price,
+
+    total: price,
+
+    tipo: "venta"
+
+  }]);
+
+  if(error){
+
+    console.log(error);
+
+    alert(
+      "Error guardando venta"
+    );
+
+  }
+
 }
 
 function removeSale(product, price){
@@ -378,25 +439,6 @@ function removeSale(product, price){
   total -= price;
 
   updateUI();
-
-  saveData();
-}
-function cancelPending(index){
-
-  const password = prompt(
-    "Contraseña para cancelar pendiente:"
-  );
-
-  if(password !== CANCELAR_PASSWORD){
-
-    alert("Contraseña incorrecta");
-
-    return;
-  }
-
-  pendingSales.splice(index, 1);
-
-  renderPending();
 
   saveData();
 }
@@ -432,17 +474,6 @@ function addPending(product, price){
 }
 
 function removePending(index){
-
-  const password = prompt(
-    "Contraseña para confirmar pago:"
-  );
-
-  if(password !== PAGADO_PASSWORD){
-
-    alert("Contraseña incorrecta");
-
-    return;
-  }
 
   const pending =
     pendingSales[index];
@@ -534,29 +565,15 @@ function renderPending(){
 
         </div>
 
-        <div class="flex gap-2 w-full md:w-auto">
+        <button
 
-  <button
+          onclick="removePending(${index})"
 
-    onclick="removePending(${index})"
+          class="bg-[#363334] text-white w-full md:w-auto py-4 px-6 rounded-2xl text-lg font-bold">
 
-    class="bg-[#363334] text-white flex-1 py-4 px-6 rounded-2xl text-lg font-bold">
+          Pagó
 
-    Pagado
-
-  </button>
-
-  <button
-
-    onclick="cancelPending(${index})"
-
-    class="bg-[#8C0D11] text-white flex-1 py-4 px-6 rounded-2xl text-lg font-bold">
-
-    Cancelar
-
-  </button>
-
-</div>
+        </button>
 
       </div>
 
