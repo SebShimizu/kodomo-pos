@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>OJN Sinaloa | Menú</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body
+class="min-h-screen bg-[#FFFFEB] flex items-center justify-center px-4">
+
+<div
+class="w-full max-w-5xl bg-white rounded-[3rem] p-10 shadow-2xl">
+
+<!-- HEADER -->
+
+<div class="text-center mb-12">
+
+<h1
+class="text-6xl font-black text-[#6C1411]">
+
+OJN Sinaloa
+
+</h1>
+
+<p
+class="text-[#363334] text-2xl mt-4">
+
+Sistema de Gestión de Ventas
+
+</p>
+
+</div>
+
+<!-- BOTONES -->
+
+<div
+class="grid md:grid-cols-3 gap-6">
+
+<!-- MERCH -->
+
+<a
+
+href="merch.html"
+
+class="bg-[#C11111]
+hover:scale-105
+transition-all
+duration-300
+
+rounded-[2rem]
+p-14
+
+text-white
+text-center
+
+shadow-xl">
+
+<div class="text-5xl mb-5">
+
+🛍️
+
+</div>
+
+<h2
+class="text-3xl font-black">
+
+Merch
+
+</h2>
+
+<p
+class="mt-3 text-lg opacity-90">
+
+Ventas de mercancía
+
+</p>
+
+</a>
+
+<!-- RASPADOS -->
+
+<a
+
+href="raspados.html"
+
+class="bg-[#6C1411]
+hover:scale-105
+transition-all
+duration-300
+
+rounded-[2rem]
+p-14
+
+text-white
+text-center
+
+shadow-xl">
+
+<div class="text-5xl mb-5">
+
+🍧
+
+</div>
+
+<h2
+class="text-3xl font-black">
+
+Raspados
+
+</h2>
+
+<p
+class="mt-3 text-lg opacity-90">
+
+Ventas de raspados
+
+</p>
+
+</a>
+
+<!-- DASHBOARD -->
+
+<a
+
+href="dashboard.html"
+
+id="dashboardBtn"
+
+class="bg-[#363334]
+hover:scale-105
+transition-all
+duration-300
+
+rounded-[2rem]
+p-14
+
+text-white
+text-center
+
+shadow-xl">
+
+<div class="text-5xl mb-5">
+
+📊
+
+</div>
+
+<h2
+class="text-3xl font-black">
+
+Dashboard
+
+</h2>
+
+<p
+class="mt-3 text-lg opacity-90">
+
+Monitoreo general
+
+</p>
+
+</a>
+
+</div>
+
+<!-- USER -->
+
+<div
+class="mt-12 flex flex-col md:flex-row justify-between items-center gap-5">
+
+<div>
+
+<p
+class="text-gray-500">
+
+Sesión iniciada como
+
+</p>
+
+<p
+id="nombreUsuario"
+
+class="text-2xl font-black text-[#363334]">
+
+Usuario
+
+</p>
+
+</div>
+
+<button
+
+onclick="logout()"
+
+class="bg-black hover:opacity-90 text-white px-10 py-4 rounded-2xl font-bold text-lg">
+
+Cerrar sesión
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const usuario = JSON.parse(
+
+localStorage.getItem(
+"usuarioActual"
+)
+
+);
+
+// si no hay sesión
+
+if(!usuario){
+
+window.location.href =
+"index.html";
+
+}
+
+// mostrar nombre
+
+document.getElementById(
+"nombreUsuario"
+).innerText =
+
+usuario.nombre;
+
+// ocultar dashboard
+// si NO es admin
+
+if(usuario.rol !== "admin"){
+
+document.getElementById(
+"dashboardBtn"
+)
+
+style.display = "none";
+
+}
+
+// logout
+
+function logout(){
+
+localStorage.removeItem(
+"usuarioActual"
+);
+
+window.location.href =
+"index.html";
+
+}
+
+</script>
+
+</body>
+</html>

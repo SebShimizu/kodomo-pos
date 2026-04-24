@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>OJN Sinaloa - Dashboard</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body
+  class="min-h-screen bg-cover bg-center bg-fixed text-[#363334]"
+  style="background-image: url('fondo.jpeg');">
+
+<div class="max-w-md md:max-w-7xl mx-auto px-3 md:px-6 pb-10">
+
+  <!-- HEADER -->
+
+  <div class="sticky top-0 z-50 py-4 mb-6 backdrop-blur-md bg-[#FFFEEB]/85 rounded-b-3xl">
+
+    <div class="text-center">
+
+      <h1 class="text-4xl md:text-6xl font-black text-[#8C0D11]">
+        OJN Sinaloa
+      </h1>
+
+      <p class="text-lg md:text-2xl font-bold">
+        Dashboard General
+      </p>
+
+      <p class="text-sm md:text-lg text-[#8C0D11]">
+       Sistema de gestión de ventas
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- GRID -->
+
+  <div class="grid lg:grid-cols-2 gap-6">
+
+    <!-- RASPADOS -->
+
+    <div class="order-2 lg:order-1 bg-white/95 backdrop-blur-md rounded-[2rem] shadow-2xl p-5 md:p-8 border border-[#8C0D11]/10">
+
+      <div class="flex justify-between items-center mb-6">
+
+        <h2 class="text-3xl md:text-4xl font-black text-[#8C0D11]">
+          Raspados
+        </h2>
+
+        <a
+          href="raspados.html"
+          class="bg-[#8C0D11] text-white px-4 py-2 rounded-2xl font-bold">
+
+          Abrir
+
+        </a>
+
+      </div>
+
+      <!-- ventas -->
+
+      <div class="space-y-3 text-lg md:text-2xl">
+
+        <div class="flex justify-between">
+          <span>Ciruela</span>
+          <span id="ciruela">0</span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>Durazno</span>
+          <span id="durazno">0</span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>Vainilla</span>
+          <span id="vainilla">0</span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>Diablito</span>
+          <span id="diablito">0</span>
+        </div>
+
+      </div>
+
+      <!-- total -->
+
+      <div class="bg-[#363334] text-white rounded-3xl p-5 mt-8">
+
+        <div class="flex justify-between items-center">
+
+          <span class="text-2xl font-bold">
+            Total
+          </span>
+
+          <span class="text-4xl font-black">
+            $<span id="raspadosTotal">0</span>
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- pendientes -->
+
+      <div class="mt-8">
+
+        <h3 class="text-2xl font-black text-[#C11111] mb-4">
+          Pendientes
+        </h3>
+
+        <div
+          id="raspadosPendientes"
+          class="space-y-3">
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- MERCH -->
+
+    <div class="order-1 lg:order-2 bg-white/95 backdrop-blur-md rounded-[2rem] shadow-2xl p-5 md:p-8 border border-[#8C0D11]/10">
+
+      <div class="flex justify-between items-center mb-6">
+
+        <h2 class="text-3xl md:text-4xl font-black text-[#8C0D11]">
+          Merch
+        </h2>
+
+        <a
+          href="merch.html"
+          class="bg-[#8C0D11] text-white px-4 py-2 rounded-2xl font-bold">
+
+          Abrir
+
+        </a>
+
+      </div>
+
+      <!-- ventas -->
+
+      <div class="space-y-3 text-lg md:text-2xl">
+
+        <div class="flex justify-between">
+          <span>Tablitas</span>
+          <span id="tablitas">0</span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>Sticker</span>
+          <span id="sticker">0</span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>Poster</span>
+          <span id="poster">0</span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>Origami</span>
+          <span id="origami">0</span>
+        </div>
+
+        <div class="flex justify-between">
+          <span>Dibujo</span>
+          <span id="dibujo">0</span>
+        </div>
+
+      </div>
+
+      <!-- total -->
+
+      <div class="bg-[#363334] text-white rounded-3xl p-5 mt-8">
+
+        <div class="flex justify-between items-center">
+
+          <span class="text-2xl font-bold">
+            Total
+          </span>
+
+          <span class="text-4xl font-black">
+            $<span id="merchTotal">0</span>
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- pendientes -->
+
+      <div class="mt-8">
+
+        <h3 class="text-2xl font-black text-[#C11111] mb-4">
+          Pendientes
+        </h3>
+
+        <div
+          id="merchPendientes"
+          class="space-y-3">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- TOTAL GENERAL -->
+
+  <div class="bg-[#8C0D11] text-white rounded-[2rem] shadow-2xl p-8 mt-8 text-center">
+
+    <h2 class="text-3xl md:text-5xl font-black mb-4">
+      TOTAL GENERAL
+    </h2>
+
+    <div class="text-5xl md:text-7xl font-black">
+
+      $<span id="grandTotal">0</span>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+function renderPendings(containerId, data){
+
+  const container =
+    document.getElementById(containerId);
+
+  container.innerHTML = '';
+
+  if(
+    !data.pendingSales ||
+    data.pendingSales.length === 0
+  ){
+
+    container.innerHTML = `
+
+      <div class="text-gray-500">
+
+        Sin pendientes
+
+      </div>
+
+    `;
+
+    return;
+  }
+
+  data.pendingSales.forEach(item => {
+
+    container.innerHTML += `
+
+      <div class="bg-[#FFF4F4] border-l-8 border-[#C11111] p-4 rounded-3xl">
+
+        <div class="font-black text-xl">
+
+          ${item.product}
+
+        </div>
+
+        <div>
+
+          Cliente:
+          <strong>${item.client}</strong>
+
+        </div>
+
+        <div>
+
+          Cantidad:
+          ${item.quantity}
+
+        </div>
+
+        <div class="font-bold text-[#8C0D11]">
+
+          Debe:
+          $${item.price * item.quantity}
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+function loadDashboard(){
+
+  const raspados =
+    JSON.parse(
+      localStorage.getItem(
+        'raspadosPOS'
+      )
+    );
+
+  const merch =
+    JSON.parse(
+      localStorage.getItem(
+        'merchPOS'
+      )
+    );
+
+  let raspadosTotal = 0;
+  let merchTotal = 0;
+
+  // RASPADOS
+
+  if(raspados){
+
+    document.getElementById('ciruela').innerText =
+      raspados.counts.Ciruela || 0;
+
+    document.getElementById('durazno').innerText =
+      raspados.counts.Durazno || 0;
+
+    document.getElementById('vainilla').innerText =
+      raspados.counts.Vainilla || 0;
+
+    document.getElementById('diablito').innerText =
+      raspados.counts.Diablito || 0;
+
+    raspadosTotal =
+      raspados.total || 0;
+
+    document.getElementById(
+      'raspadosTotal'
+    ).innerText =
+      raspadosTotal;
+
+    renderPendings(
+      'raspadosPendientes',
+      raspados
+    );
+
+  }
+
+  // MERCH
+
+  if(merch){
+
+    document.getElementById('tablitas').innerText =
+      merch.counts.Tablitas || 0;
+
+    document.getElementById('sticker').innerText =
+      merch.counts.Sticker || 0;
+
+    document.getElementById('poster').innerText =
+      merch.counts.Poster || 0;
+
+    document.getElementById('origami').innerText =
+      merch.counts.Origami || 0;
+
+    document.getElementById('dibujo').innerText =
+      merch.counts.Dibujo || 0;
+
+    merchTotal =
+      merch.total || 0;
+
+    document.getElementById(
+      'merchTotal'
+    ).innerText =
+      merchTotal;
+
+    renderPendings(
+      'merchPendientes',
+      merch
+    );
+
+  }
+
+  // TOTAL GENERAL
+
+  document.getElementById(
+    'grandTotal'
+  ).innerText =
+
+    raspadosTotal +
+    merchTotal;
+
+}
+
+loadDashboard();
+
+setInterval(
+  loadDashboard,
+  1000
+);
+
+</script>
+
+</body>
+</html>
